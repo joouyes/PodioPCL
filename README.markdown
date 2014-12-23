@@ -6,14 +6,14 @@ This is a .NET 4.5 Portable Class Library varriant for accessing the Podio API. 
 Installation
 -------
 
-Currently there is not a nuget package for the PCL here. You can include the project, or build it and include the DLL.
+Currently there is not a NuGet package for the PCL here. You can include the project, or build it and include the DLL.
 
 Changes
 -------------
 
-While I tried to make the PCL as backwards compatable as possible, some classes are just not in the Portable version of .NET. Those methods might be left in but marked as Obsolete (they would work but not optimized), throw a NotImplementedException or not exist at all.
+While I tried to make the PCL as backwards compatible as possible, some classes are just not in the Portable version of .NET. Those methods might be left in but marked as Obsolete (they would work but not optimized), throw a NotImplementedException or not exist at all.
 
-If there is any loss of functionality by making it backwards compatable or becomes too difficult to implement, I will abandon that goal.
+If there is any loss of functionality by making it backwards compatible or becomes too difficult to implement, I will abandon that goal.
 
 This is still a work in progress, but it is a WORKING work in progress :)
 
