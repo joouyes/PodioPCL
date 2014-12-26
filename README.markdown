@@ -7,7 +7,7 @@ Installation
 
 ![Nuget](https://www.nuget.org/Content/Logos/nugetlogo.png)
 
-Published Nuget package here: https://www.nuget.org/packages/PodioPCL/0.1.0
+Published Nuget package here: https://www.nuget.org/packages/PodioPCL/
 
 Changes
 -------------
