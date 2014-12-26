@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PodioPCL</id>
+    <version>0.1.0</version>
+    <authors>ryan.hatfield</authors>
+    <owners>ryan.hatfield</owners>
+    <licenseUrl>https://github.com/OnsharpRyan/PodioPCL/blob/master/LICENSE</licenseUrl>
+    <projectUrl>hhttps://github.com/OnsharpRyan/PodioPCL/</projectUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/7095163?v=3&amp;s=200</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PCL Version of Podio library.</description>
+	<summary>Sandcastle help file here: http://htmlpreview.github.io/?https://github.com/OnsharpRyan/PodioPCL/blob/master/help/Index.html</summary>
+    <copyright>Copyright 2014</copyright>
+    <tags>Podio PodioPCL Podio.NET PodioNet Podio .Net</tags>
+    <dependencies>
+		<dependency id="Newtonsoft.Json" version="[6.0.7]" />
+    </dependencies>
+  </metadata>
+	<files>	
+		<file src="..\PodioPCL\bin\Release\PodioPCL.dll" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1" />
+		<file src="..\PodioPCL\bin\Release\PodioPCL.pdb" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1" />
+	</files>
+</package>
