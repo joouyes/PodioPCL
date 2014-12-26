@@ -1,12 +1,13 @@
 About
 =====
-![Nuget](https://www.nuget.org/Content/Logos/nugetlogo.png)
-Published Nuget package here: https://www.nuget.org/packages/PodioPCL/0.1.0
-
 This is a .NET 4.5 Portable Class Library varriant for accessing the Podio API. Very heavily based on the official .NET Client.
 
 Installation
 -------
+
+![Nuget](https://www.nuget.org/Content/Logos/nugetlogo.png)
+
+Published Nuget package here: https://www.nuget.org/packages/PodioPCL/0.1.0
 
 Currently there is not a NuGet package for the PCL here. You can include the project, or build it and include the DLL.
 
