@@ -2,15 +2,15 @@
 <package >
   <metadata>
     <id>PodioPCL</id>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <authors>ryan.hatfield</authors>
     <owners>ryan.hatfield</owners>
     <licenseUrl>https://github.com/OnsharpRyan/PodioPCL/blob/master/LICENSE</licenseUrl>
     <projectUrl>hhttps://github.com/OnsharpRyan/PodioPCL/</projectUrl>
-    <iconUrl>https://avatars0.githubusercontent.com/u/7095163?v=3&amp;s=200</iconUrl>
+	  <iconUrl>https://lh5.ggpht.com/11PttuYuHo8SiFmZ2AGyD-7S_QWP5fADqDj5A14vuKMIdOjktiRvaSuQp_FgrP_gtVbK=w300</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>PCL Version of Podio library.</description>
-	<summary>Sandcastle help file here: http://htmlpreview.github.io/?https://github.com/OnsharpRyan/PodioPCL/blob/master/help/Index.html</summary>
+    <description>PCL Version of Podio library. NOT FINISHED YET but functional if you don't need to upload images. That should be finished soon. Check out the Examples on GitHub.</description>
+    <summary>PCL Version of the Podio Library.</summary>
     <copyright>Copyright 2014</copyright>
     <tags>Podio PodioPCL Podio.NET PodioNet Podio .Net</tags>
     <dependencies>
