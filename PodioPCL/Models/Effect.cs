@@ -19,29 +19,47 @@ using PodioPCL.Models;
 namespace PodioPCL
 {
 	/// <summary>
+	/// Moved <see cref="Models.Effect"/> into the Models folder. This class is obsolete.
+	/// </summary>
+	[Obsolete("Moved <see cref=\"Models.Effect\" /> into the Models folder.")]
+	public class Effect : Models.Effect
+	{
+		/// <summary>
+		/// Moved <see cref="Models.Effect"/> into the Models folder. This class is obsolete.
+		/// </summary>
+		public Effect()
+		{
+			System.Diagnostics.Debug.WriteLine("PodioPCL.Effect is obsolete. Use PodioPCL.Models.Effect");
+		}
+	}
+}
+
+namespace PodioPCL.Models
+{
+	/// <summary>
 	/// Class Effect.
 	/// </summary>
-    public class Effect
-    {
+	public class Effect
+	{
 		/// <summary>
 		/// Gets or sets the type.
 		/// </summary>
 		/// <value>The type.</value>
-        [JsonProperty("type")]
-        public String Type { get; set; }
+		[JsonProperty("type")]
+		public String Type { get; set; }
 
 		/// <summary>
 		/// Gets or sets the effect identifier.
 		/// </summary>
 		/// <value>The effect identifier.</value>
-        [JsonProperty("effect_id")]
-        public int EffectId { get; set; }
+		[JsonProperty("effect_id")]
+		public int EffectId { get; set; }
 
 		/// <summary>
 		/// Gets or sets the attributes.
 		/// </summary>
 		/// <value>The attributes.</value>
-        [JsonProperty("attributes")]
-        public List<FlowAttribute> Attributes { get; set; }
-    }
+		[JsonProperty("attributes")]
+		public List<FlowAttribute> Attributes { get; set; }
+	}
 }

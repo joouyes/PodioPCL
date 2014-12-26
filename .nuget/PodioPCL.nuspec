@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>PodioPCL</id>
-    <version>0.2.0</version>
+    <version>0.2.2</version>
     <authors>ryan.hatfield</authors>
     <owners>ryan.hatfield</owners>
     <licenseUrl>https://github.com/OnsharpRyan/PodioPCL/blob/master/LICENSE</licenseUrl>
@@ -20,5 +20,6 @@
 	<files>	
 		<file src="..\PodioPCL\bin\Release\PodioPCL.dll" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1" />
 		<file src="..\PodioPCL\bin\Release\PodioPCL.pdb" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1" />
+		<file src="..\PodioPCL\bin\Release\PodioPCL.xml" target="lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1" />
 	</files>
 </package>

@@ -1,16 +1,17 @@
 ﻿// ***********************************************************************
-// Assembly         : PodioAPI
+// Assembly         : PodioPCL
 // Author           : OnsharpRyan
-// Created          : 12-13-2014
+// Created          : 12-09-2014
 //
 // Last Modified By : OnsharpRyan
-// Last Modified On : 12-13-2014
+// Last Modified On : 12-26-2014
 // ***********************************************************************
 // <copyright file="Podio.cs" company="Onsharp">
 //     Copyright (c) Onsharp. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +29,10 @@ using System.Threading.Tasks;
 namespace PodioPCL
 {
 	/// <summary>
-	/// Class Podio.
+	/// The Podio client is used to Get and Set data with the Podio API.
+	/// <para>
+	/// Online Documentation <see href="http://podiopcl.playground.servers.onsharp.com/help/"/>
+	/// </para>
 	/// </summary>
 	public class Podio
 	{

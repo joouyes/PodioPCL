@@ -79,7 +79,7 @@ namespace PodioPCL.Services
 		/// <param name="effects">The list of effects to add</param>
 		/// <param name="config">The configuration for the cause of the flow</param>
 		/// <returns>Task&lt;System.Int32&gt;.</returns>
-        public async Task<int> AddNewFlow(string refType, int refId, string name, string type, List<Effect> effects, dynamic config = null)
+        public async Task<int> AddNewFlow(string refType, int refId, string name, string type, List<Models.Effect> effects, dynamic config = null)
         {
             string url = string.Format("/flow/{0}/{1}/",refType,refId);
             dynamic requestData = new
@@ -102,7 +102,7 @@ namespace PodioPCL.Services
 		/// <param name="effects">The list of effects to add</param>
 		/// <param name="config">The configuration for the cause of the flow</param>
 		/// <returns>Task.</returns>
-        public Task UpdateFlow(int flowId, string name, List<Effect> effects = null, dynamic config = null)
+		public Task UpdateFlow(int flowId, string name, List<Models.Effect> effects = null, dynamic config = null)
         {
             string url = string.Format("/flow/{0}", flowId);
             dynamic requestData = new
