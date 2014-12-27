@@ -20,7 +20,7 @@ using System.Linq;
 namespace PodioPCL.Models
 {
 	/// <summary>
-	/// Class ItemField.
+	/// The ItemField is the base class for all <see cref="ItemField"/>'s in an <see cref="Item"/>.
 	/// </summary>
 	[JsonConverter(typeof(ItemFieldConverter))]
 	public class ItemField
@@ -33,7 +33,7 @@ namespace PodioPCL.Models
 		public int? FieldId { get; set; }
 
 		/// <summary>
-		/// Gets or sets the type.
+		/// Gets or sets the type of the ItemField.
 		/// </summary>
 		/// <value>The type.</value>
 		[JsonProperty("type")]
@@ -89,7 +89,7 @@ namespace PodioPCL.Models
 		}
 
 		/// <summary>
-		/// Gets the setting.
+		/// Gets the setting from the <see cref="ItemField.Config"/> property.
 		/// </summary>
 		/// <param name="key">The key.</param>
 		/// <returns>System.Object.</returns>
@@ -105,38 +105,38 @@ namespace PodioPCL.Models
 		}
 
 		/// <summary>
-		/// Values as.
+		/// Values as a <typeparamref name="TValue"/>.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
+		/// <typeparam name="TValue">The type of the value.</typeparam>
 		/// <param name="value">The value.</param>
 		/// <param name="key">The key.</param>
-		/// <returns>T.</returns>
-		protected T valueAs<T>(JToken value, string key)
-			where T : class, new()
+		/// <returns>A <typeparamref name="TValue"/></returns>
+		protected TValue valueAs<TValue>(JToken value, string key)
+			where TValue : class, new()
 		{
 			if (value != null && value[key] != null)
-				return value[key].ToObject<T>();
+				return value[key].ToObject<TValue>();
 
 			return null;
 		}
 
 		/// <summary>
-		/// Valueses as.
+		/// Values as List&lt;<typeparamref name="TValue"/>&gt;.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
+		/// <typeparam name="TValue"></typeparam>
 		/// <param name="list">The list.</param>
-		/// <returns>List&lt;T&gt;.</returns>
-		protected List<T> valuesAs<T>(List<T> list)
-			where T : class, new()
+		/// <returns>List&lt;<typeparamref name="TValue"/>&gt;.</returns>
+		protected List<TValue> valuesAs<TValue>(List<TValue> list)
+			where TValue : class, new()
 		{
 			if (list == null)
 			{
-				list = new List<T>();
+				list = new List<TValue>();
 				if (this.Values != null)
 				{
 					foreach (var itemAttributes in this.Values)
 					{
-						var obj = this.valueAs<T>(itemAttributes, "value");
+						var obj = this.valueAs<TValue>(itemAttributes, "value");
 						list.Add(obj);
 					}
 				}
@@ -147,27 +147,27 @@ namespace PodioPCL.Models
 		/// <summary>
 		/// Ensures the values initialized.
 		/// </summary>
-		/// <param name="includeFirstChildDict">if set to <c>true</c> [include first child dictionary].</param>
-		protected void ensureValuesInitialized(bool includeFirstChildDict = false)
+		/// <param name="includeFirstChildDictionary">if set to <c>true</c> [include first child dictionary].</param>
+		protected void ensureValuesInitialized(bool includeFirstChildDictionary = false)
 		{
 			if (this.Values == null)
 			{
 				this.Values = new JArray();
 			}
-			if (includeFirstChildDict && this.Values.Count == 0)
+			if (includeFirstChildDictionary && this.Values.Count == 0)
 			{
 				this.Values.Add(new JObject());
 			}
 		}
 
 		/// <summary>
-		/// Converts to.
+		/// Converts the ItemField to the <typeparamref name="TItemField" />
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <returns>T.</returns>
-		public T ConvertTo<T>() where T : ItemField, new()
+		/// <typeparam name="TItemField">The type of the new ItemField.</typeparam>
+		/// <returns>A new <typeparamref name="TItemField"/></returns>
+		public TItemField ConvertTo<TItemField>() where TItemField : ItemField, new()
 		{
-			var toItem = new T();
+			var toItem = new TItemField();
 			toItem.Config = Config;
 			toItem.ExternalId = ExternalId;
 			toItem.FieldId = FieldId;

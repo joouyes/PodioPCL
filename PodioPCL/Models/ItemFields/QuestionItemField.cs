@@ -15,7 +15,11 @@
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class QuestionItemField.
+	/// A list of <see cref="T:PodioPCL.Models.QuestionOption">options</see> for the <see cref="T:PodioPCL.Models.Question">question</see>.
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/applications">Application API Documentation</a>
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/questions">Questions API Documentation</a>
 	/// </summary>
     public class QuestionItemField : CategoryItemField
     {

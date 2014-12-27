@@ -17,7 +17,11 @@ using System.Collections.Generic;
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class ImageItemField.
+	/// Holds an <see cref="PodioPCL.Models.Image">image</see>.
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/applications">Application API Documentation</a>
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/files">File API Documentation</a>
 	/// </summary>
 	public class ImageItemField : ItemField
 	{
@@ -56,7 +60,7 @@ namespace PodioPCL.Models.ItemFields
 			}
 		}
 		/// <summary>
-		/// Sets the file identifier.
+		/// Sets the file id of the image file.
 		/// </summary>
 		/// <value>The file identifier.</value>
 		public int FileId

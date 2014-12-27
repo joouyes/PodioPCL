@@ -17,34 +17,36 @@ using System.Linq;
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class ProgressItemField.
+	/// The progress of an <see cref="T:PodioPCL.Models.Application">app</see> <see cref="T:PodioPCL.Models.ItemField">item</see>.
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/applications">Application API Documentation</a>
 	/// </summary>
-    public class ProgressItemField : ItemField
-    {
+	public class ProgressItemField : ItemField
+	{
 		/// <summary>
 		/// Gets or sets the value.
 		/// </summary>
 		/// <value>The value.</value>
-        public int? Value
-        {
-            get
-            {
-                if (this.HasValue("value"))
-                {
-                    return Convert.ToInt32((Int64)this.Values.First()["value"]);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                ensureValuesInitialized(true);
-                this.Values.First()["value"] = value;
-            }
-        }
+		public int? Value
+		{
+			get
+			{
+				if (this.HasValue("value"))
+				{
+					return Convert.ToInt32((Int64)this.Values.First()["value"]);
+				}
+				else
+				{
+					return null;
+				}
+			}
+			set
+			{
+				ensureValuesInitialized(true);
+				this.Values.First()["value"] = value;
+			}
+		}
 
-    }
+	}
 
 }

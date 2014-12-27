@@ -16,7 +16,9 @@ using System.Linq;
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class StateItemField.
+	/// The text value of state from the settings field.
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/items">Item API Documentation</a>
 	/// </summary>
     public class StateItemField : ItemField
     {

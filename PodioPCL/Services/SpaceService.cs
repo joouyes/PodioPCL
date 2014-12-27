@@ -30,7 +30,7 @@ namespace PodioPCL.Services
 		/// <param name="postOnNewApp">True if new apps should be announced with a status update, false otherwise</param>
 		/// <param name="postOnNewMember">True if new members should be announced with a status update, false otherwise</param>
 		/// <returns>Task&lt;System.Int32&gt;.</returns>
-		public async Task<int> CreateSpace(int orgId, string name, string privacy = null, bool? autoJoin = null, bool? postOnNewApp = null, bool? postOnNewMember = null)
+		public async Task<int> CreateSpace(int orgId, string name, Space.PrivacyTypes privacy = Space.PrivacyTypes.Closed, bool? autoJoin = null, bool? postOnNewApp = null, bool? postOnNewMember = null)
         {
             string url = "/space/";
             dynamic requestData = new
@@ -58,7 +58,7 @@ namespace PodioPCL.Services
 		/// <param name="postOnNewApp">True if new apps should be announced with a status update, false otherwise</param>
 		/// <param name="postOnNewMember">True if new members should be announced with a status update, false otherwise</param>
 		/// <returns>Task.</returns>
-		public async Task UpdateSpace(int spaceId, string name = null, string urlLabel = null, string privacy = null, bool? autoJoin = null, bool? postOnNewApp = null, bool? postOnNewMember = null)
+		public async Task UpdateSpace(int spaceId, string name = null, string urlLabel = null, Space.PrivacyTypes privacy = Space.PrivacyTypes.Closed, bool? autoJoin = null, bool? postOnNewApp = null, bool? postOnNewMember = null)
         {
             string url = string.Format("/space/{0}", spaceId);
             dynamic requestData = new
@@ -72,6 +72,17 @@ namespace PodioPCL.Services
             };
             await _podio.PutAsync<dynamic>(url, requestData);
         }
+
+		/// <summary>
+		/// Deletes the <see cref="T:PodioPCL.Models.Space"/> with the given id.
+		/// <para>Podio API Reference: https://developers.podio.com/doc/spaces/delete-space-22417 </para>
+		/// </summary>
+		/// <param name="spaceId">The space identifier.</param>
+		public async Task DeleteSpace(int spaceId)
+		{
+			string url = string.Format("/space/{0}", spaceId);
+			await _podio.DeleteAsync<dynamic>(url);
+		}
 
 		/// <summary>
 		/// Returns the available spaces for the given organization. This is spaces that are open and available for the user to join.

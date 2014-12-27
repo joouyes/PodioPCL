@@ -34,3 +34,4 @@ packages
 *.jpeg
 *.png
 !NuGet.exe
+appSettings.config

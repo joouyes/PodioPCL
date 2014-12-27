@@ -17,7 +17,11 @@ using System.Collections.Generic;
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class MemberItemField.
+	/// A Member of the <see cref="T:PodioPCL.Models.Space"/>.
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/applications">Application API Documentation</a>
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/space-members">Space Members API Documentation</a>
 	/// </summary>
 	public class MemberItemField : ItemField
 	{

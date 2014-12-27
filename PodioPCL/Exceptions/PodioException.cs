@@ -17,7 +17,7 @@ using System;
 namespace PodioPCL.Exceptions
 {
 	/// <summary>
-	/// Class PodioException.
+	/// The PodioException is the base for all PodioExceptions
 	/// </summary>
     public class PodioException : Exception
     {
@@ -47,7 +47,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioInvalidGrantException.
 	/// </summary>
-    class PodioInvalidGrantException : PodioException
+	public class PodioInvalidGrantException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioInvalidGrantException"/> class.
@@ -63,7 +63,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioBadRequestException.
 	/// </summary>
-    class PodioBadRequestException : PodioException
+	public class PodioBadRequestException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioBadRequestException"/> class.
@@ -79,7 +79,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioAuthorizationException.
 	/// </summary>
-    class PodioAuthorizationException : PodioException
+	public class PodioAuthorizationException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioAuthorizationException"/> class.
@@ -95,7 +95,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioForbiddenException.
 	/// </summary>
-    class PodioForbiddenException : PodioException
+	public class PodioForbiddenException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioForbiddenException"/> class.
@@ -111,7 +111,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioNotFoundException.
 	/// </summary>
-    class PodioNotFoundException : PodioException
+	public class PodioNotFoundException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioNotFoundException"/> class.
@@ -127,7 +127,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioConflictException.
 	/// </summary>
-    class PodioConflictException : PodioException
+	public class PodioConflictException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioConflictException"/> class.
@@ -143,7 +143,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioGoneException.
 	/// </summary>
-    class PodioGoneException : PodioException
+	public class PodioGoneException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioGoneException"/> class.
@@ -159,7 +159,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioRateLimitException.
 	/// </summary>
-    class PodioRateLimitException : PodioException
+	public class PodioRateLimitException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioRateLimitException"/> class.
@@ -175,7 +175,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioServerException.
 	/// </summary>
-    class PodioServerException : PodioException
+	public class PodioServerException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioServerException"/> class.
@@ -191,7 +191,7 @@ namespace PodioPCL.Exceptions
 	/// <summary>
 	/// Class PodioUnavailableException.
 	/// </summary>
-    class PodioUnavailableException : PodioException
+	public class PodioUnavailableException : PodioException
     {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PodioUnavailableException"/> class.

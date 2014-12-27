@@ -17,7 +17,13 @@ using System.Collections.Generic;
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class EmbedItemField.
+	/// A list of <see cref="PodioPCL.Models.Embed">embeds</see> (links).
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/applications">Application API Documentation</a>
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/items">Item API Documentation</a>
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/embeds">Embed API Documentation</a>
 	/// </summary>
 	public class EmbedItemField : ItemField
 	{

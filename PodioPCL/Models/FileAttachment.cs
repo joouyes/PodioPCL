@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 namespace PodioPCL.Models
 {
 	/// <summary>
-	/// Class FileAttachment.
+	/// FileAttachment from Podio.
 	/// </summary>
     public class FileAttachment
     {

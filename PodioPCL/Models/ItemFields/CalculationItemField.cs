@@ -17,7 +17,9 @@ using System.Linq;
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class CalculationItemField.
+	/// A calculation based on <see cref="T:PodioPCL.Models.ItemField">Fields</see> in the same or related <see cref="T:PodioPCL.Models.Application">Application</see>
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/applications">Application API Documentation</a>
 	/// </summary>
 	public class CalculationItemField : ItemField
 	{

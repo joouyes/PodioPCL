@@ -192,6 +192,7 @@
     <Compile Include="Services\ReferenceService.cs" />
     <Compile Include="Services\ReminderService.cs" />
     <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\SpaceMembersService.cs" />
     <Compile Include="Services\SpaceService.cs" />
     <Compile Include="Services\StatusService.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="Utils\ApplicationFields\StateApplicationField.cs" />
     <Compile Include="Utils\ApplicationFields\TextApplicationField.cs" />
     <Compile Include="Utils\Authentication\IAuthStore.cs" />
+    <Compile Include="Utils\Authentication\LoginSettings.cs" />
     <Compile Include="Utils\Authentication\NullAuthStore.cs" />
     <Compile Include="Utils\Authentication\PodioOAuth.cs" />
     <Compile Include="Utils\Authentication\StaticAuthStore.cs" />
@@ -241,6 +243,7 @@
     <Compile Include="Models\ItemFields\VideoItemField.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Utils\LowerStringEnumConverter.cs" />
     <Compile Include="Utils\MimeTypeMapping.cs" />
     <Compile Include="Utils\ObjectExtensions.cs" />
     <Compile Include="Utils\PodioCollection.cs" />

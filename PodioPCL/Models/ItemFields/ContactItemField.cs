@@ -17,7 +17,9 @@ using System.Collections.Generic;
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class ContactItemField.
+	/// Reference to a <see cref="T:PodioPCL.Models.Contact"/>, which can be either a <see cref="T:PodioPCL.Models.User"/> or a workspace <see cref="T:PodioPCL.Models.Contact"/>.
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/applications">Application API Documentation</a>
 	/// </summary>
     public class ContactItemField : ItemField
     {
@@ -56,7 +58,7 @@ namespace PodioPCL.Models.ItemFields
             }
         }
 		/// <summary>
-		/// Sets the contact identifier.
+		/// Sets the profile_id of the contact.
 		/// </summary>
 		/// <value>The contact identifier.</value>
         public int  ContactId

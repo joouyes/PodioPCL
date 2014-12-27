@@ -17,7 +17,11 @@ using System.Linq;
 namespace PodioPCL.Models.ItemFields
 {
 	/// <summary>
-	/// Class DurationItemField.
+	/// Stores are duration in seconds, but normally presented in hours, minutes and seconds.
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/applications">Application API Documentation</a>
+	/// <br />
+	/// <a href="https://developers.podio.com/doc/items">Item API Documentation</a>
 	/// </summary>
     public class DurationItemField : ItemField
     {
