@@ -43,6 +43,7 @@
     <Compile Include="Exceptions\PodioException.cs" />
     <Compile Include="Models\ActivityGroup.cs" />
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\ApplicationFieldTypes.cs" />
     <Compile Include="Models\AppMarketCategory.cs" />
     <Compile Include="Models\AppMarketShareInstall.cs" />
     <Compile Include="Models\AppMarketShares.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Utils\MimeTypeMapping.cs" />
     <Compile Include="Utils\ObjectExtensions.cs" />
     <Compile Include="Utils\PodioCollection.cs" />
+    <Compile Include="Utils\Serialization\ApplicationFieldConverter.cs" />
     <Compile Include="Utils\Serialization\ItemFieldConverter.cs" />
     <Compile Include="Utils\Serialization\JSONSerializer.cs">
       <SubType>Code</SubType>

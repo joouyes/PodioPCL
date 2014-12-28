@@ -190,7 +190,13 @@ namespace PodioPCL.Models
 		[JsonConverter(typeof(LowerStringEnumConverter))]
 		public enum PrivacyTypes
 		{
+			/// <summary>
+			/// Closed privacy option.
+			/// </summary>
 			Closed,
+			/// <summary>
+			/// Open privacy option.
+			/// </summary>
 			Open,
 		}
 	}

@@ -329,22 +329,20 @@ namespace PodioPCL.Services
 		/// <example>
 		/// <![CDATA[
 		///		//Example Usage: Adding a new application with a text field and category field.
-		///		             
-		///		var application = new Application();
-		///		application.SpaceId = SPACE_ID;
-		///		application.Config = new ApplicationConfiguration
+		///		
+		///		var Config = new ApplicationConfiguration
 		///		{
 		///		    Name = "Application Name",
 		///		    Icon = "230.png",
 		///		    ItemName = "Single item",
 		///		    Description = "My Description"
 		///		};
-		///		var textField = application.Field<TextApplicationField>();
+		///		var textField = new TextApplicationField();
 		///		textField.Config.Label = "Sample Text Field";
 		///		textField.Config.Label = "Sample Text Field Description";
 		///		textField.Size = "small";
 		///		             
-		///		var categoryField = application.Field<CategoryApplicationField>();
+		///		var categoryField = new CategoryItemField();
 		///		categoryField.Config.Label = "Sample Category Field";
 		///		categoryField.Options = new List<CategoryItemField.Answer>()
 		///		{
@@ -353,19 +351,19 @@ namespace PodioPCL.Services
 		///		};
 		///		categoryField.Multiple = true;
 		///		categoryField.Display = "list";
-		///		int newAppID = podio.ApplicationService.AddNewApp(application);
+		///		int newAppID = await podio.ApplicationService.AddNewApp(SPACE_ID, Config, new List<ItemField> { textField, categoryField });
 		/// ]]>
 		/// </example>
 		/// <param name="application"></param>
 		/// <returns>The id of the newly created app</returns>
-		public async Task<int> AddNewApp(Application application)
+		public async Task<int> AddNewApp(int spaceId, ApplicationConfiguration config, List<ApplicationField> fields = null)
 		{
 			string url = "/app/";
 			var requestDate = new ApplicationCreateUpdateRequest()
 			{
-				SpaceId = application.SpaceId,
-				Config = application.Config,
-				Fields = application.Fields
+				SpaceId = spaceId,
+				Config = config,
+				Fields = fields
 			};
 			dynamic response = await _podio.PostAsync<dynamic>(url, requestDate);
 			return (int)response["app_id"];

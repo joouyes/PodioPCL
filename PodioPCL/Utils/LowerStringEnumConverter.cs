@@ -2,10 +2,6 @@
 using Newtonsoft.Json.Converters;
 using System;
 using System.Reflection;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PodioPCL.Utils
 {
@@ -32,7 +28,8 @@ namespace PodioPCL.Utils
 				throw new ArgumentException("Value not an Enum.");
 			}
 			Enum enumValue = (Enum)value;
-			serializer.Serialize(writer, enumValue.ToString().ToLower());
+			var stringValue = enumValue.ToString().ToLower();
+			serializer.Serialize(writer, stringValue);
 		}
 	}
 }

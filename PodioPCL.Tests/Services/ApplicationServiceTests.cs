@@ -1,4 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PodioPCL.Exceptions;
+using PodioPCL.Models;
+using PodioPCL.Models.ItemFields;
+using PodioPCL.Utils.ApplicationFields;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +26,42 @@ namespace PodioPCL.Tests.Services
 		public async Task AddNewAppTest()
 		{
 			Podio podio = await TestUtility.GetPodioAndUserLogin();
-			throw new NotImplementedException();
+			var allOrganizations = await podio.OrganizationService.GetOrganizations();
+			var organization = allOrganizations.FirstOrDefault();
+			var space = organization.Spaces.Where(s => s.Name == "PodioPCL Tests").FirstOrDefault();
+			ApplicationConfiguration config = new ApplicationConfiguration
+			{
+				Name = "PodioPCL Test App",
+				ItemName = "PodioPCL Test Itme",
+				Icon = "230.png"
+			};
+			var textField = new TextApplicationField();
+			textField.Config.Label = "Sample Text Field";
+			textField.Config.Label = "Sample Text Field Description";
+			textField.Size = "small";
+
+			var categoryField = new CategoryApplicationField();
+			categoryField.Config.Label = "Sample Category Field";
+			categoryField.Options = new List<CategoryItemField.Option>()
+			{
+			    new CategoryItemField.Option{ Text = "Option One "},
+			    new CategoryItemField.Option{ Text = "Option Two "}
+			};
+			categoryField.Multiple = true;
+			categoryField.Display = CategoryApplicationField.DisplayType.List;
+			categoryField.Type = "category";
+			int newAppID = await podio.ApplicationService.AddNewApp(space.SpaceId, config, new List<ApplicationField> { textField, categoryField });
+
+			var newApplicationId = await podio.ApplicationService.AddNewApp(space.SpaceId, config);
+			var newApplication = await podio.ApplicationService.GetApp(newAppID);
+			try
+			{
+				await podio.ApplicationService.DeleteApp(newApplicationId);
+			}
+			catch (PodioForbiddenException)
+			{
+				//your API level doesn't allow the deletion of apps.
+			}
 		}
 
 		[TestMethod]

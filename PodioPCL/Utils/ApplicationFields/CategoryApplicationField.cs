@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PodioPCL.Models;
 using PodioPCL.Models.ItemFields;
+using System;
 using System.Collections.Generic;
 
 namespace PodioPCL.Utils.ApplicationFields
@@ -51,17 +53,32 @@ namespace PodioPCL.Utils.ApplicationFields
 		/// <summary>
 		/// The way the options are displayed on the item, one of "inline", "list" or "dropdown"
 		/// </summary>
-		public string Display
+		public DisplayType? Display
 		{
 			get
 			{
-				return (string)this.GetSetting("display");
+				DisplayType displayType = DisplayType.Inline;
+				if (Enum.TryParse<DisplayType>((string)this.GetSetting("display"), out displayType))
+					return displayType;
+				else
+					return null;
 			}
 			set
 			{
 				InitializeFieldSettings();
-				this.InternalConfig.Settings["display"] = value;
+				if (value == null)
+					this.InternalConfig.Settings["display"] = null;
+				else
+					this.InternalConfig.Settings["display"] = value.Value.ToString().ToLower();
 			}
+		}
+
+		[JsonConverter(typeof(LowerStringEnumConverter))]
+		public enum DisplayType
+		{
+			Inline,
+			List,
+			Dropdown
 		}
 	}
 }

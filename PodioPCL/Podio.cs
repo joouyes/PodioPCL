@@ -504,6 +504,7 @@ namespace PodioPCL
 		/// <param name="fileName">File Name</param>
 		/// <param name="mimeType">Type of the MIME.</param>
 		/// <param name="request">HttpWebRequest object of which request stream file is added to</param>
+		/// <returns>Task.</returns>
 		/// <exception cref="System.IO.FileNotFoundException">File not found in the specified path</exception>
 		private async Task AddFileToRequestStream(byte[] file, string fileName, string mimeType, HttpWebRequest request)
 		{

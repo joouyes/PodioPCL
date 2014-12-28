@@ -139,18 +139,51 @@ namespace PodioPCL.Models
 		[JsonProperty("subscribed_count")]
 		public int SubscribedCount { get; set; }
 
+		/// <summary>
+		/// Class Types.
+		/// </summary>
 		public static class Types
 		{
+			/// <summary>
+			/// The application created
+			/// </summary>
 			public static readonly string AppCreated = "app_created";
+			/// <summary>
+			/// The application updated
+			/// </summary>
 			public static readonly string AppUpdated = "app_updated";
+			/// <summary>
+			/// The application deleted
+			/// </summary>
 			public static readonly string AppDeleted = "app_deleted";
+			/// <summary>
+			/// The application installed
+			/// </summary>
 			public static readonly string AppInstalled = "app_installed";
+			/// <summary>
+			/// The application activated
+			/// </summary>
 			public static readonly string AppActivated = "app_activated";
+			/// <summary>
+			/// The application deactivated
+			/// </summary>
 			public static readonly string AppDeactivated = "app_deactivated";
 
+			/// <summary>
+			/// The space created
+			/// </summary>
 			public static readonly string SpaceCreated = "space_created";
+			/// <summary>
+			/// The space member added
+			/// </summary>
 			public static readonly string SpaceMemberAdded = "member_added";
+			/// <summary>
+			/// The space member left
+			/// </summary>
 			public static readonly string SpaceMemberLeft = "member_left";
+			/// <summary>
+			/// The space member kicked
+			/// </summary>
 			public static readonly string SpaceMemberKicked = "member_kicked";
 		}
 	}

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>PodioPCL</id>
-    <version>0.2.2</version>
+    <version>0.3.0-Alpha</version>
     <authors>ryan.hatfield</authors>
     <owners>ryan.hatfield</owners>
     <licenseUrl>https://github.com/OnsharpRyan/PodioPCL/blob/master/LICENSE</licenseUrl>

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using PodioPCL.Utils;
 // ***********************************************************************
 // Assembly         : PodioPCL
 // Author           : OnsharpRyan
@@ -62,7 +63,11 @@ namespace PodioPCL.Models.ItemFields
 			}
 		}
 
-		public FormatTypes Format
+		/// <summary>
+		/// The format of the <see cref="T:PodioPCL.Models.ItemFields.TextItemField"/> Text property. Can be plain, markdown or HTML.
+		/// </summary>
+		/// <value>The format.</value>
+		public FormatTypes? Format
 		{
 			get
 			{
@@ -70,7 +75,7 @@ namespace PodioPCL.Models.ItemFields
 				{
 					return this.Values.First["format"].ToObject<FormatTypes>();
 				}
-				return FormatTypes.None;
+				return null;
 			}
 
 			set
@@ -83,25 +88,31 @@ namespace PodioPCL.Models.ItemFields
 		/// <summary>
 		/// The Format types for Text Formating.
 		/// </summary>
-		[JsonConverter(typeof(StringEnumConverter))]
+		[JsonConverter(typeof(LowerStringEnumConverter))]
 		public enum FormatTypes
 		{
-			[JsonProperty(null)]
-			None,
-			[JsonProperty("plain")]
+			/// <summary>
+			/// Plain text format
+			/// </summary>
 			Plain,
-			[JsonProperty("markdown")]
+			/// <summary>
+			/// Markdown Format
+			/// </summary>
 			Markdown,
-			[JsonProperty("html")]
+			/// <summary>
+			/// HTML Format
+			/// </summary>
 			HTML
 		}
 
 		/// <summary>
 		/// Enum SizeTypes
 		/// </summary>
+		[JsonConverter(typeof(LowerStringEnumConverter))]
 		public enum SizeTypes
 		{
-			//TODO: implement the SizeTypes
+			Small,
+			Large
 		}
 	}
 }
