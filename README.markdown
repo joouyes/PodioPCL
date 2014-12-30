@@ -2,6 +2,11 @@ About
 =====
 This is a .NET 4.5 Portable Class Library varriant for accessing the Podio API. Very heavily based on the official .NET Client.
 
+Example
+-------
+I intended to use this with Xamarin.Forms and mobile projcts, so there's an MVVM ish example I made called [PodioPCL.MobileExample](https://github.com/OnsharpRyan/PodioPCL.MobileExample)
+I've used it in web projects also, I'll make an example for that soon.
+
 Installation
 -------
 
